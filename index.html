@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GAVS BET - Baccarat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+<h1>GAVS BET</h1>
+      <p class="subtitle">Baccarat betting: bet on <b>Player</b>, <b>Banker</b>, or <b>Tie</b>. Press <b>Deal</b>.</p>
+    </header>
+
+    <section class="panel">
+      <div class="row">
+        <div class="stat">
+          <div class="label">Balance</div>
+          <div class="value" id="balance">1000</div>
+        </div>
+        <div class="stat">
+          <div class="label">Current Bet</div>
+          <div class="value" id="currentBet">None</div>
+        </div>
+      </div>
+
+      <div class="bet-grid">
+        <button class="bet" id="betPlayer">Bet Player</button>
+        <button class="bet" id="betBanker">Bet Banker</button>
+        <button class="bet" id="betTie">Bet Tie (8x)</button>
+        <div class="spacer"></div>
+      </div>
+
+      <div class="bet-controls">
+        <label for="wager">Wager</label>
+        <input id="wager" type="number" inputmode="numeric" min="1" step="1" value="50" />
+        <div class="hint">Choose amount, then place the bet.</div>
+      </div>
+
+      <div class="actions">
+        <button class="primary" id="dealBtn">Deal</button>
+        <button class="ghost" id="resetBtn">Reset Balance</button>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section class="panel results">
+      <div class="hand">
+        <h2>Player</h2>
+        <div class="cards" id="playerCards">—</div>
+        <div class="total">Total: <span id="playerTotal">—</span></div>
+      </div>
+
+      <div class="vs">VS</div>
+
+      <div class="hand">
+        <h2>Banker</h2>
+        <div class="cards" id="bankerCards">—</div>
+        <div class="total">Total: <span id="bankerTotal">—</span></div>
+      </div>
+    </section>
+
+    <section class="panel footer">
+      <div class="log-title">Round Result</div>
+      <div id="roundResult" class="round-result">—</div>
+      <div class="small">Rules follow standard Baccarat: face values count as 0; tens as 0; totals are modulo 10; Player draws according to 3rd card rules; Banker draws based on Player third-card (if any).</div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
